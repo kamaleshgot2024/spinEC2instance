@@ -74,7 +74,7 @@ resource "aws_security_group" "main_sg" {
 
 # Launch an EC2 Instance
 resource "aws_instance" "main_instance" {
-  ami           = data.aws_ami.amazon_linux.id # Replace with your desired AMI ID
+  ami           = data.aws_ami.amazon_linux.id # Replace with your desired AMI ID in data.tf
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.main_subnet.id
   vpc_security_group_ids = [aws_security_group.main_sg.id]
